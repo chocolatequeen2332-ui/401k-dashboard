@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RetireSecure • 401(k) Plan</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+.dashboard-bg { background: linear-gradient(135deg, #0f172a, #1e2937); }
+</style>
+</head>
+<body class="bg-zinc-950 text-white">
+<!-- Login Screen -->
+<div id="login-screen" class="min-h-screen flex items-center justify-center">
+<div class="bg-zinc-900 p-10 rounded-3xl shadow-2xl w-full max-w-md">
+<div class="text-center mb-8">
+<i class="fa-solid fa-piggy-bank text-6xl text-blue-500"></i>
+<h1 class="text-4xl font-bold mt-4">RetireSecure</h1>
+<p class="text-zinc-400">401(k) Retirement Plan</p>
+</div>
+<input id="username" type="text" value="stephen.horizon" placeholder="Username" class="w-full mb-4 p-4 bg-zinc-800 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+<input id="password" type="password" value="demo123" placeholder="Password" class="w-full mb-6 p-4 bg-zinc-800 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+<button onclick="login()" class="w-full bg-blue-600 hover:bg-blue-700 py-4 rounded-2xl text-xl font-semibold transition">Sign In Securely</button>
+<p class="text-center text-zinc-500 text-sm mt-6">Demo Account</p>
+</div>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard" class="hidden min-h-screen dashboard-bg">
+<nav class="bg-zinc-900 border-b border-zinc-700 px-8 py-5 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<i class="fa-solid fa-piggy-bank text-3xl text-blue-500"></i>
+<div>
+<h1 class="text-2xl font-bold">RetireSecure 401(k)</h1>
+<p class="text-sm text-zinc-400">Stephen Horizon • Plan #RS-478291</p>
+</div>
+</div>
+<div onclick="logout()" class="cursor-pointer flex items-center gap-2 hover:text-blue-400">Logout</div>
+</nav>
+
+<div class="max-w-7xl mx-auto p-8">
+<div class="grid md:grid-cols-3 gap-6 mb-10">
+<div class="bg-zinc-900 rounded-3xl p-8">
+<p class="text-zinc-400 text-sm">Total Balance</p>
+<p class="text-6xl font-bold text-green-400 mt-2">$312,847.62</p>
+<p class="text-emerald-400 text-sm mt-3">+$18,492 this month (+6.3%)</p>
+</div>
+<div class="bg-zinc-900 rounded-3xl p-8">
+<p class="text-zinc-400 text-sm">Vested Amount</p>
+<p class="text-5xl font-bold mt-2">$300,000.00</p>
+</div>
+<div class="bg-zinc-900 rounded-3xl p-8">
+<p class="text-zinc-400 text-sm">Employer Match YTD</p>
+<p class="text-5xl font-bold mt-2 text-amber-400">$12,847.62</p>
+</div>
+</div>
+
+<div class="bg-zinc-900 rounded-3xl p-8 mb-8">
+<h3 class="text-xl font-semibold mb-6">Recent Activity</h3>
+<table class="w-full text-sm">
+<tr class="border-b border-zinc-700"><td class="py-3">Jul 01, 2026</td><td>Employee Contribution</td><td class="text-right text-green-400">+$1,250</td></tr>
+<tr class="border-b border-zinc-700"><td class="py-3">Jul 01, 2026</td><td>Employer Match</td><td class="text-right text-green-400">+$625</td></tr>
+<tr><td class="py-3">Jun 15, 2026</td><td>Investment Gains</td><td class="text-right text-emerald-400">+$8,940</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<script>
+function login() {
+document.getElementById('login-screen').classList.add('hidden');
+document.getElementById('dashboard').classList.remove('hidden');
+}
+function logout() {
+document.getElementById('dashboard').classList.add('hidden');
+document.getElementById('login-screen').classList.remove('hidden');
+}
+</script>
+</body>
+</html>
